@@ -1,0 +1,72 @@
+$def with (products, page)
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="/static/styles/page.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="/static/styles/admin/admin_layout.css" type="text/css" media="screen" charset="utf-8">
+        <script type='text/javascript' src='/static/scripts/common.js'></script>
+    </head>
+    <body>
+        <table class='db-table'>
+            <caption>产品管理</caption>
+            <tr class='db-head'>
+                <th>产品名称</th>
+                <th>产品类型</th>
+                <th>单价</th>
+                <th>销量</th>
+                <th>发布时间</th>
+                <th>操作</th>
+            </tr>
+        $for product in products:
+            $if loop.odd:
+                <tr class='db-odd'>
+            $else:
+                <tr class='db-even'>
+            <td>$product.product_name</td>
+            <td>$product.product_type</td>
+            <td>$product.product_price</td>
+            <td>$product.product_sales</td>
+            <td>$product.product_date</td>
+            <td class='db-operation'><a href='#'>编辑</a> <a href='/product_delete/$product.product_id' onclick='return onDelete()'>删除</a></td>
+            </tr>
+        </table>
+        <div id='page'>
+            $:page.getPageHTML()
+        </div>
+        <div class='new'>
+            <form action='/product_admin' method='post'>
+                <fieldset>
+                    <legend>发布新产品</legend>
+                    <table>
+                        <tr>
+                            <th>产品类型</th>
+                            <td>
+                                <select name='type'>
+                                    <option value='1'>笔记本</option>
+                                    <option value='2'>平板电脑</option>
+                                    <option value='3'>手机</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>产品名称:</th>
+                            <td><input type='text' value='' name='name' class='title'/></td>
+                        </tr>
+                        <tr>
+                            <th>单价:</th>
+                            <td><input type='text' value='' name='price' class='title'/></td>
+                        </tr>
+                        <tr>
+                            <th>产品介绍:</th>
+                            <td><textarea rows='10' cols='80' name='intro' class='content'></textarea></td>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td><input type='submit' value="发布" class='submit'/></td>
+                        </tr>
+                    </table>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

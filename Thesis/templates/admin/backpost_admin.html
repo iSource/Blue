@@ -1,0 +1,33 @@
+$def with (backposts, page)
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="/static/styles/page.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="/static/styles/admin/admin_layout.css" type="text/css" media="screen" charset="utf-8">
+        <script type='text/javascript' src='/static/scripts/common.js'></script>
+    </head>
+    <body>
+        <table class='db-table'>
+            <caption>回帖管理</caption>
+            <tr class='db-head'>
+                <th>回帖用户</th>
+                <th>回帖内容</th>
+                <th>回帖时间</th>
+                <th>操作</th>
+            </tr>
+        $for backpost in backposts:
+            $if loop.odd:
+                <tr class='db-odd'>
+            $else:
+                <tr class='db-even'>
+            <td>$backpost.username</td>
+            <td>$backpost.backpost_content</td>
+            <td>$backpost.backpost_pub_time</td>
+            <td class='db-operation'><a href='/backpost_delete/$backpost.backpost_id?post_id=$backpost.post_id' onclick='return onDelete()'>删除</a></td>
+            </tr>
+        </table>
+        <div id='page'>
+            $:page.getPageHTML()
+        </div>
+    </body>
+</html>

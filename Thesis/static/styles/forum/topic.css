@@ -1,0 +1,127 @@
+#topic-content {
+    margin-top:20px;
+}
+
+.topic {
+    min-width:1000px;
+    background-color:#FFF;
+    /* margin-top:20px; */
+    border-bottom:2px solid #339966;
+    border-top:1px solid #AAA;
+    color:#444;
+    font-size:14px;
+    font-weight:bold;
+    border-right:1px solid #DDD;
+}
+
+.topic-head {
+    padding:5px;
+    width:140px;
+    height:190px;
+    float:left;
+    background-color:#336699;
+    font-family:sans-serif;
+}
+
+.topic-head .floor {
+    font-size:10px;
+    color:#CCC;
+    font-weight:normal;
+}
+
+.topic-head .head_pic {
+    text-align:center;
+    margin:5px;
+}
+
+.topic-head .head_pic img {
+    width:120px;
+    height:120px;
+    border:1px solid #AAA;
+}
+
+.topic-head .username {
+    margin:5px;
+    font-size:16px;
+    text-align:center;
+}
+
+.topic-head .username a {
+    text-decoration:none;
+    color:#cc9966;
+}
+
+.topic-head .username a:hover {
+    color:#ff8000;
+}
+
+.topic-head .pub_time {
+    margin:5px;
+    font-size:8px;
+    color:#AAA;
+    text-align:center;
+}
+
+.topic .topic-title {
+    margin-left:150px;
+    padding:5px;
+    height:28px;
+    background-color:#EFE;
+    border-bottom:2px solid #DDD;
+}
+
+.topic .topic-content {
+    padding:5px;
+    margin-left:150px;
+    height:150px;
+    background-color:#EFE;
+}
+
+.topic-back {
+    clear:both;
+    border-bott;
+    font-size:14px;
+    border-bottom:2px solid #CCC;
+    border-right:1px solid #DDD;
+    color:#444;
+}
+
+.topic-back-content {
+    margin-left:150px;
+    padding:5px;
+    height:190px;
+    background-color:white;
+}
+
+#write-backpost-table {
+    clear:both;
+}
+
+#write-backpost-table td {
+    padding:3px 3px 3px 0px;
+}
+
+#write-backpost-table textarea {
+    width:800px;
+    height:150px;
+    border:1px solid #336699;
+    font-family:sans-serif;
+    font-size:16px;
+}
+
+#write-backpost-table #submit {
+    padding:5px 15px;
+    background-color:#336699;
+    color:#EEE;
+    border:1px solid #AAA;
+}
+
+#write-backpost-table #submit:hover {
+    background-color:#ff9900;
+    color:#336699;
+}
+
+#topic-page {
+    text-align:right;
+    margin:10px 0px 10px 0px;
+}

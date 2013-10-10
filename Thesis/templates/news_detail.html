@@ -1,0 +1,15 @@
+$def with (news)
+$var title:news
+<div id='news_detail'>
+    $for one_news in news:
+    <div id='news_title'>
+        $one_news.news_title
+    </div>
+    <div id='news_pub_time'>
+        发布时间:$one_news.news_pub_time
+    </div>
+    <div id='news_content'>
+        $one_news.news_content
+    </div>
+</div>
+

@@ -1,0 +1,96 @@
+$def with (page)
+<html>
+    <head>
+        <link href='/static/styles/layout.css' rel='stylesheet' type='text/css' />
+        <link href='/static/styles/login.css' rel='stylesheet' type='text/css' />
+        <link href='/static/styles/index.css' rel='stylesheet' type='text/css' />
+        <link href='/static/styles/page.css' rel='stylesheet' type='text/css' />
+        <link href='/static/styles/news.css' rel='stylesheet' type='text/css' />
+        <link href='/static/styles/product.css' rel='stylesheet' type='text/css' />
+        <script type='text/javascript' src='/static/scripts/jquery-1.9.1.min.js'></script>
+        <script type='text/javascript' src='/static/scripts/layout.js'></script>
+    </head>
+    <body>
+        <div id='header'>
+            <div id='login_panel'>
+                <a href="#" id="take-back">收起</a>
+                <form action='/login' method='post'>
+                    <label for='username'>用户名:</label>
+                    <input type='text' name='username' id='username' />
+                    <label for='password'>密码:</label>
+                    <input type='password' name='password' id='password' />
+                    <input type='submit' value='登录' class='submit' />
+                </form>
+            </div>
+            <div class='head_color'>
+            </div>  
+            <div class='login_register'>
+            $if session.login == True:
+                <a href='/member'>$session.username</a>
+                <span>|</span>
+                <a href='/logout'>退出</a>
+            $else:
+                <a href='#' id='login'>登录</a>
+                <span>|</span>
+                <a href='/register'>注册</a>
+            </div>
+        </div>
+        <div id='content'>
+            <div id='menu'>
+                <ul class='menu_ul'>
+                    $if page.title == 'index':
+                        <li class='menu_li menu_li_focus'><a href='/'>首页</a></li>
+                    $else:
+                        <li class='menu_li'><a href='/'>首页</a></li>
+                    $if page.title == 'news':
+                        <li class='menu_li menu_li_focus'><a href='/news'>新闻中心</a></li>
+                    $else:
+                        <li class='menu_li'><a href='/news'>新闻中心</a></li>
+                    $if page.title == 'product':
+                        <li class='pro_down_li menu_li menu_li_focus'>
+                    $else:
+                        <li class='pro_down_li menu_li'>
+                    <a href='/product'>不乐商城</a>
+                    <!-- <div class='pro_down'> -->
+                    <!--     <h3 class='down_title'>所有产品</h3> -->
+                    <!--     <div class='first_col'> -->
+                    <!--         <h4>台式机</h4> -->
+                    <!--         <ul> -->
+                    <!--             <li>嫦娥1号</li> -->
+                    <!--             <li>神州6号</li> -->
+                    <!--             <li>天启3号</li> -->
+                    <!--         </ul> -->
+                    <!--     </div> -->
+                    <!--     <div class='second_col'> -->
+                    <!--         <h4>笔记本</h4> -->
+                    <!--         <ul> -->
+                    <!--             <li>嫦娥2号</li> -->
+                    <!--             <li>神州7号</li> -->
+                    <!--             <li>天启4号</li> -->
+                    <!--         </ul> -->
+                    <!--     </div> -->
+                    <!--     <div class='third_col'> -->
+                    <!--         <h4>移动设备</h4> -->
+                    <!--         <ul> -->
+                    <!--             <li>嫦娥3号</li> -->
+                    <!--             <li>神州8号</li> -->
+                    <!--             <li>天启5号</li> -->
+                    <!--         </ul> -->
+                    <!--     </div> -->
+                    <!-- </div> -->
+                    </li>
+                    <li class='menu_li'><a href='#'>客户服务</a></li>
+                    <li class='menu_li'><a href='/forum'>技术论坛</a></li>
+                    <li class='menu_li'><a href='#'>关于不乐</a></li>
+                    <li class='menu_li'><a href='#'>联系我们</a></li>
+                </ul>
+            </div>
+            <div style='clear:both'>
+            </div>
+            $:page
+        </div>
+        <div id='footer'>
+            <div class="foot_text">版权所有:2013-3013 不乐集团</div>
+        </div>
+    </body>
+</html>

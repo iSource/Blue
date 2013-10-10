@@ -1,0 +1,33 @@
+$def with (posts, page)
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="stylesheet" href="/static/styles/page.css" type="text/css" media="screen" charset="utf-8">
+        <link rel="stylesheet" href="/static/styles/admin/admin_layout.css" type="text/css" media="screen" charset="utf-8">
+        <script type='text/javascript' src='/static/scripts/common.js'></script>
+    </head>
+    <body>
+        <table class='db-table'>
+            <caption>发帖管理</caption>
+            <tr class='db-head'>
+                <th>发帖用户</th>
+                <th>帖子标题</th>
+                <th>发帖时间</th>
+                <th>操作</th>
+            </tr>
+        $for post in posts:
+            $if loop.odd:
+                <tr class='db-odd'>
+            $else:
+                <tr class='db-even'>
+            <td>$post.username</td>
+            <td>$post.post_title</td>
+            <td>$post.post_pub_time</td>
+            <td class='db-operation'><a href='/backpost_admin/$post.post_id'>回帖管理</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href='/post_delete/$post.post_id' onclick='return onDelete()'>删除</a></td>
+            </tr>
+        </table>
+        <div id='page'>
+            $:page.getPageHTML()
+        </div>
+    </body>
+</html>

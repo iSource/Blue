@@ -1,0 +1,10 @@
+$def with (msg)
+$var title:提示
+<script>
+    function last_page() {
+        history.go(-2);
+    }
+</script>
+<div>
+    <p class='msg'>$msg<a href="#" class='back' onclick='last_page()'>返回之前的页面</a></p> 
+</div>

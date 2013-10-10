@@ -1,0 +1,45 @@
+$def with (id, posts, backposts, page)
+<div id="topic-content">
+    $for post in posts:
+        <div class="topic">
+        <div class="topic-head">
+        <p class="floor">楼主</p>
+        $if post.head_image != None:
+            <p class="head_pic"><img src="$post.head_image"/></p>
+        $else:
+            <p class="head_pic"><img src="/static/images/head_images/default.jpg"/></p>
+        <p class="username"><a href='#'>$post.username</a></p>
+        <p class="pub_time">$post.post_pub_time</p>
+        </div>
+        <p class="topic-title">[主题] $post.post_title</p>
+        <p class="topic-content">$post.post_content</p>
+        </div>
+    $for backpost in backposts:
+        <div class="topic-back">
+        <div class="topic-head">
+        <p class="floor">$(page.offset + loop.index)楼</p>
+        $if backpost.head_image != None:
+            <p class="head_pic"><img src="$backpost.head_image"/></p>
+        $else:
+            <p class="head_pic"><img src="/static/images/head_images/default.jpg"/></p>
+        <p class="username"><a href='#'>$backpost.username</a></p>
+        <p class="pub_time">$backpost.backpost_pub_time</p>
+        </div>
+        <p class="topic-back-content">$backpost.backpost_content</p>
+        </div>
+    <div id="topic-page">
+        $:page.getPageHTML()
+    </div>
+    <div>
+        <form action="/topic/$id" method="post">
+            <table id='write-backpost-table'>
+                <tr>
+                    <td><textarea name="content" rows="10" cols="80"></textarea></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" id="submit" value="回复"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>

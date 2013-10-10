@@ -1,0 +1,47 @@
+$def with (page)
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    
+        <title>技术论坛</title>
+        
+        <link rel="stylesheet" href="/static/styles/forum/forum_layout.css" type="text/css" media="screen" charset="utf-8" />
+
+        <link rel="stylesheet" href="/static/styles/forum/index.css" type="text/css" media="screen" charset="utf-8" />
+        <link href='/static/styles/page.css' rel='stylesheet' type='text/css' />
+        <link href='/static/styles/forum/write_post.css' rel='stylesheet' type='text/css' />
+        <link href='/static/styles/forum/topic.css' rel='stylesheet' type='text/css' />
+    </head>
+    <body>
+        <div id="header">
+            <div id='logo-info'>
+                <a href='/forum'><img src="/static/images/logo-smallest.png"/></a>
+                <div id='log-info'>
+                    $if session.login == True:
+                        <a class="log-reg" href="/member">$session.username</a>
+                        <a href="/logout" class="log-reg">退出</a>
+                    $else:
+                        <a class="log-reg" href="/login">登录</a>
+                        <a href="/register" class="log-reg">注册</a>
+                </div>
+            </div>
+            <div id="menu-search"> 
+                <ul id="menu">
+                    <li><a href='/forum'>论坛首页</a></li>
+                    <li><a href='#'>我的发帖</a></li>
+                    <li><a href='/'>不乐官网</a></li>
+                    <li><a href='/product'>不乐商城</a></li>
+                </ul> 
+                <div id='search'><form><input type='text' class='search-input' /></form></div>
+            </div>
+        </div> 
+        <div id="content">
+            $:page 
+        </div>
+        <div id="footer">
+            <div class="foot_text">版权所有:2013-3013 不乐集团</div>
+        </div>
+    </body>
+</html>

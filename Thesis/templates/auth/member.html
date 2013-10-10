@@ -1,0 +1,25 @@
+$def with(members)
+$var title:会员管理
+<div class="modify">
+    <form action="" method="POST">
+        <table>
+            $for member in members:
+            <tr>
+                <td>用户名:</td>
+                <td>$member.member_username</td>
+            </tr>
+            <tr>
+                <td>密码:</td>
+                <td><a href="/password">修改密码</a></td>
+            </tr>
+            <tr>
+                <td>邮箱:</td>
+                <td><input type="text" name="email" value='$member.member_email' /></td>
+            </tr>
+            <tr class='bar'>
+                <td class='td_bar'></td>
+                <td><input type="submit" value="修改" class='modify_submit' /></td>
+            </tr>
+        </table>
+    </form>
+</div>

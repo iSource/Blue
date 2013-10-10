@@ -1,0 +1,32 @@
+.page_number, .current_page_number, .other_page_number {
+    color:white;
+    display:inline-block;
+    font-size:0.6em;
+    padding:5px;
+    margin:2px;
+    text-align:center;
+    text-decoration:none;
+}
+
+.page_number:hover {
+    color:#FF8000;
+}
+
+.current_page_number:hover, .other_page_number:hover {
+    color:#FF8000;
+}
+
+.page_number {
+    width:15px;
+    background-color:#336699;
+}
+
+.current_page_number {
+    width:15px;
+    background-color:#339966;
+}
+
+.other_page_number {
+    width:50px;
+    background-color:#336699;
+}

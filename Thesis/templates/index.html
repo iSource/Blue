@@ -1,0 +1,24 @@
+$def with (news)
+$var title: index
+<div>
+    <div class='head_pic'>
+    </div>
+    <div class='news'>
+        <div class='news_head'>
+            <h3><a class='news_title' href='/news'>公司新闻</a></h3>
+        </div>
+        <div class='news_body'>
+            <ul>
+            $for one_news in news:
+                <li><a href='news_detail/$one_news.news_id'>$one_news.news_title</a><span class='news_time'>$one_news.news_pub_time</span></li>
+            </ul>        
+        </div>
+    </div>
+    <div class='product-list'>
+        <ul>
+            <li><img src='/static/images/notebook.jpg'/></li>
+            <li><img src='/static/images/pad.jpg'/></li>
+            <li><img src='/static/images/mobilephone.jpg'/></li>
+        </ul>
+    </div>
+</div>

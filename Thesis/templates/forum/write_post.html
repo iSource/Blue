@@ -1,0 +1,28 @@
+<div id='write-post'>
+    <form action='/write_post' method='post'>
+        <table class='write-post-table'>
+            <tr>
+                <th>帖子类型</th>
+                <td>
+                    <select name="post_type">
+                        <option value='1'>笔记本</option>
+                        <option value='2'>平板电脑</option>
+                        <option value='3'>手机</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>主题:</th>
+                <td><input name="subject" id='subject' type="text"/></td>
+            </tr>
+            <tr>
+                <th>内容:</th>
+                <td><textarea name="content" cols="80" rows="10"></textarea></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td><input type='submit' id='submit' value="发布"/></td>
+            </tr>
+        </table>
+    </form>
+</div>

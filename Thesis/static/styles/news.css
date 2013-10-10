@@ -1,0 +1,35 @@
+.news_page {
+    width:600px;
+    text-align:center;
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+#news_detail {
+    width:800px;
+    margin:0px auto;
+}
+
+#news_title {
+    font-size:18px;
+    text-align:center;
+    margin:30px 20px 20px 20px;
+}
+
+#news_pub_time {
+    font-size:10px;
+    color:#AAA;
+    float:right;
+}
+
+#news_content {
+    font-size:14px;
+    color:#666;
+    clear:both;
+    border-top:2px solid #336699;
+    margin-top:50px;
+    text-indent:2em;
+    text-align:justify;
+    padding:20px 20px 50px 20px;
+    line-height:1.5em;
+}

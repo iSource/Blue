@@ -1,0 +1,20 @@
+$def with (product_info, page)
+$var title:product
+<div>
+    <div id='product-all'>
+         $for product in product_info:
+            <div class='product-one'>
+            <a href='#'>$product.product_name</a>
+            <p>单价:￥$product.product_price</p>
+            <p>销售量:$product.product_sales件</p>
+            <p>发布日期:$product.product_date</p>
+            <p>产品介绍:$product.product_intro</p>
+            <p><a href='#'>立即购买</a></p>
+            </div>
+    </div>
+    <div id='product-page'>
+        $:page.getPageHTML()
+    </div>
+    <div class='clear'>
+    </div>
+</div>

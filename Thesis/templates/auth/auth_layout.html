@@ -1,0 +1,18 @@
+$def with (content)
+
+<html>
+	<head>
+		<link rel='stylesheet' href='/static/styles/auth/auth_layout.css' type='text/css' media='screen' />
+        <title>不乐</title>
+	</head>
+	<body>
+		<div id='content'>
+            <a href="/" id="home">返回不乐官网</a>
+			<h1>$content.title</h1>
+			$:content
+		</div>
+		<div id='footer'>
+		</div>
+	</body>
+</html>
+

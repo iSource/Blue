@@ -1,0 +1,28 @@
+
+pre_fix = 'controllers.'
+urls = (
+    '/', pre_fix + 'thesis.Index',
+    '/news', pre_fix + 'thesis.News',
+    '/news_detail/(.*)', pre_fix + 'thesis.NewsDetail',
+    '/product', pre_fix + 'thesis.Product',
+    '/login', pre_fix + 'thesis.Login',
+    '/logout', pre_fix + 'thesis.Logout',
+    '/register', pre_fix + 'thesis.Register',
+    '/forum', pre_fix + 'thesis.Forum',
+    '/topic/(.*)', pre_fix + 'thesis.Topic',
+    '/write_post', pre_fix + 'thesis.WritePost',
+    '/member', pre_fix + 'thesis.Member',
+    '/password', pre_fix + 'thesis.Password',
+    '/message', pre_fix + 'thesis.Message',
+    '/admin', pre_fix + 'thesis.Admin',
+    '/news_admin', pre_fix + 'thesis.NewsAdmin',
+    '/news_delete/(.*)', pre_fix + 'thesis.NewsDelete',
+    '/product_admin', pre_fix + 'thesis.ProductAdmin',
+    '/product_delete/(.*)', pre_fix + 'thesis.ProductDelete',
+    '/member_admin', pre_fix + 'thesis.MemberAdmin',
+    '/member_delete/(.*)', pre_fix + 'thesis.MemberDelete',
+    '/post_admin', pre_fix + 'thesis.PostAdmin',
+    '/post_delete/(.*)', pre_fix + 'thesis.PostDelete',
+    '/backpost_admin/(.*)', pre_fix + 'thesis.BackpostAdmin',
+    '/backpost_delete/(.*)', pre_fix + 'thesis.BackpostDelete',
+)

@@ -1,0 +1,46 @@
+$def with (posts, page)
+
+<div id="content-menu">
+    <ul>
+        <li><a href="/forum?post_type=0">全部</a></li>
+        <li><a href="/forum?post_type=1">笔记本</a></li>
+        <li><a href="/forum?post_type=2">平板电脑</a></li>
+        <li><a href="/forum?post_type=3">手机</a></li>
+        <a href="/write_post" id="write-post">发帖</a>
+    </ul>
+</div>
+<div id="posts_content">
+    <div id='posts-head'>
+        <div class='posts-head-topic'>筛选: <a href='/forum?post_class=0'>全部主题</a><span class='sep'> | </span><a href='/forum?post_class=1'>精华</a><span class='sep'> | </span><a href='/forum?post_class=2'>推荐</a><span class='posts-head-sort'> 排序: </span><a href='#'>最后发表</a><span class='sep'> | </span><a href='#'>最多回帖</a></div><div class='posts-head-author'>作者</div><div class='posts-head-view'>回复/查看</div><div class='posts-head-visiter'>最后发表</div>
+    </div>
+    $for post in posts:
+        <div class='post'>
+        <div class='post-title'>
+        $if post.top >= 2:
+            <img src='/static/images/top2.gif' alt='top2' />
+        $elif post.top == 1:
+            <img src='/static/images/top1.gif' alt='top1' />
+        $else:
+            <img src='/static/images/no-top.gif' alt='no-top' />
+        <a href='/topic/$post.post_id'>[$post.post_type_name] $post.post_title</a>
+        $if post.essence > 0:
+            <img src='/static/images/essence.gif' alt='essence' />
+        $if post.recommend > 0:
+            <img src='/static/images/recommend.gif' alt='recommend' />
+        </div>
+        <div class='post-author'><a href='#'>$post.username</a><span>/$datestr(post.post_pub_time)</span>
+        </div>
+        <div class='post-view'><span>$post.back</span><span>/$post.view</span>
+        </div>
+        <div class='post-visiter'>
+        $if post.last_username != None:
+            <a href='#'>$post.last_username</a><span>/$datestr(post.last_time)</span>
+        $else:
+            <span>没有回复</span>
+        </div>
+        </div>
+</div>
+<div class='post_page'>
+    $:page.getPageHTML()
+</div>
+</div>

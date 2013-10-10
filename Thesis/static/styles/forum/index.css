@@ -1,0 +1,158 @@
+#content-menu #write-post {
+    display:block;
+    padding:2px 20px;
+    float:right;
+    background-color:#336699;
+    color:#EEE;
+    text-decoration:none;
+    border:1px solid #AAA;
+}
+
+#content-menu #write-post:hover {
+    background-color:#ff9900;
+    color:#336699;
+}
+
+#content-menu ul {
+    margin-top:20px;
+    list-style-type:none;
+    border-top:5px solid #369;
+    padding-top:10px;
+    clear:both;
+}
+
+#content-menu ul li {
+    display:inline;
+    margin-right:10px;
+}
+
+#content-menu ul li a {
+    text-decoration:none;
+    color:#444;
+    font:13px sans-serif;
+    border:1px solid #888;
+    padding:3px;
+    background-color:#EEE;
+}
+
+#content-menu ul li a:hover {
+    color:white;
+    background-color:#336699;
+}
+
+#posts_content {
+    margin-top:10px;
+    border-left:1px solid #AAA;
+    border-right:1px solid #AAA;
+    min-height:400px;
+    background-color:white;
+}
+
+#posts-head {
+    background-color:#DDD;
+    border-bottom:1px solid #AAA;
+    border-top:1px solid #AAA;
+    height:16px;
+    padding:10px;
+    font:12px sans-serif;
+    color:#666;
+}
+
+#posts-head a {
+    text-decoration:none;
+    color:#336699;
+}
+
+#posts-head a:hover {
+    color:#339966;
+}
+
+.sep {
+    color:#AAA;
+    font-size:12px;
+}
+
+.posts-head-topic {
+    margin:0px;
+    min-width:600px;
+    width:60%;
+    display:inline-block;
+}
+
+.posts-head-author {
+    margin:0px;
+    min-width:150px;
+    width:15%;
+    display:inline-block;
+}
+
+.posts-head-view {
+    margin:0px;
+    min-width:100px;
+    width:10%;
+    display:inline-block;
+}
+
+.posts-head-sort {
+    margin-left:10px;
+}
+
+.posts-head-visiter {
+    margin:0px;
+    display:inline-block;
+}
+
+.post {
+    border-bottom:1px solid #CCF;
+    padding:8px;
+    font:11px sans-serif;
+}
+
+.post:hover {
+    background-color:#DDF;
+}
+
+.post a {
+    color:#444;
+    text-decoration:none;
+}
+
+.post a:hover {
+    color:#336699;
+}
+
+.post .post-author a {
+    color:#336699;
+}
+
+.post .post-author a:hover {
+    color:#339966;
+}
+
+.post-title {
+    min-width:600px;
+    width:60%;
+    display:inline-block;
+    font:16px sans-serif;
+}
+
+.post-author {
+    min-width:150px;
+    width:15%;
+    display:inline-block;
+}
+
+.post-view {
+    min-width:100px;
+    width:10%;
+    display:inline-block;
+}
+
+.post-visiter {
+    display:inline-block;
+}
+
+.post_page {
+    margin-top:20px;
+    text-align:center;
+}
